@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, jsonify, url_for, json
+from flask import Blueprint, flash, render_template, request, redirect, jsonify, url_for, json
 from app.database import Usuario
 from app.database import *
 
@@ -33,7 +33,8 @@ def add_usuarios():
         
         db.session.add(new_usuario)
         db.session.commit()
-        # result = {"mensaje": "usuario guardado correctamente"}
+        
+        flash("Se Creo usuario correctamente!")
         
         return redirect(url_for("contacts.index"))
 
@@ -52,6 +53,8 @@ def actualizar(id):
 
         db.session.commit()
 
+        flash("Se actualizó usuario correctamente!")
+
         return redirect(url_for("contacts.index"))
 
     return render_template("update.html", contact=contact)
@@ -62,4 +65,7 @@ def eliminar(id):
     contact = Usuario.query.get(id)
     db.session.delete(contact)
     db.session.commit()
+
+    flash("Se Eliminó usuario correctamente!")
+
     return redirect(url_for("contacts.index"))

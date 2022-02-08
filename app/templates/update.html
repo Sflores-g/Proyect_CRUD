@@ -1,3 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+CRUD Python-Flask SQLAlchemy  | Actualizar 
+{% endblock %}
+
+{% block body %}
+
 <form action="/actualizar/{{contact.id}}" method="POST">
 
   <input type="text" name="nombres" placeholder="Escriba su nombre" value="{{contact.nombres}}"/>
@@ -8,6 +16,6 @@
   <input type="text" name="titulo" placeholder="Escriba su titulo" value="{{contact.titulo}}"/>
   <button>Guardar</button>
 
-
-
 </form>
+
+{% endblock %}
