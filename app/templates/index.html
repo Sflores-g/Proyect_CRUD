@@ -1,0 +1,34 @@
+<form action="/new" method="POST">
+
+     <input type="text" name="nombres" placeholder="Escriba su nombre"/>
+     <input type="text" name="apellidos" placeholder="Escriba su apellidos"/>
+     <input type="date" name="fecha_nacimiento" placeholder="Escriba su fecha_nacimiento" />
+     <input type="text" name="lugar_nacimiento" placeholder="Escriba su lugar_nacimiento"/>
+     <input type="text" name="sexo" placeholder="Escriba su sexo"/>
+     <input type="text" name="titulo" placeholder="Escriba su titulo"/>
+     <button>Guardar</button>
+
+
+
+</form>
+
+<div>
+   {% for contact in contacts %}
+
+   <div>
+      <h3>{{contact.nombres}}</h3>
+      <p>{{contact.apellidos}}</p>
+      <p>{{contact.fecha_nacimiento}}</p>
+      <p>{{contact.lugar_nacimiento}}</p>
+      <p>{{contact.sexo}}</p>
+      <p>{{contact.titulo}}</p>
+
+      <div>
+         <a href="{{url_for('contacts.actualizar', id=contact.id)}}">Actualizar</a>
+         <a href="{{url_for('contacts.eliminar', id=contact.id)}}">Eliminar</a>
+      </div>
+   </div>
+
+
+   {% endfor %}
+</div>

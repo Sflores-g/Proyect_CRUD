@@ -12,11 +12,13 @@ def init_db():
 
     create_db()
 
-    # Usuario(
+    # admin = Usuario(
     #     nombres = "Sandra",
     #     apellidos = "Flores",
-    #     fecha_nacimiento = 31/8/1991,
+    #     fecha_nacimiento = "31/8/1991",
     #     lugar_nacimiento = "Iquitos",
     #     sexo = "femenino",
     #     titulo = "Sistemas",
     # )
+    # db.session.add(admin)
+    # db.session.commit()
