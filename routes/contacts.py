@@ -34,7 +34,7 @@ def add_usuarios():
         db.session.add(new_usuario)
         db.session.commit()
         
-        flash("Se Creo usuario correctamente!")
+        flash("Se creo usuario correctamente!")
         
         return redirect(url_for("contacts.index"))
 
@@ -66,6 +66,6 @@ def eliminar(id):
     db.session.delete(contact)
     db.session.commit()
 
-    flash("Se Eliminó usuario correctamente!")
+    flash("Se eliminó usuario correctamente!")
 
     return redirect(url_for("contacts.index"))
